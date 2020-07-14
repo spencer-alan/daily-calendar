@@ -1,3 +1,8 @@
+body {
+font-family: 'Open Sans', sans-serif;
+font-size: 16px;
+line-height: 1;
+}
 h1 {
   font-size: 84px;
 }
@@ -6,9 +11,12 @@ textarea {
   width: 100%;
   height: 100%;
 }
-.starter-template {
-  padding: 3rem 1.5rem;
+.jumbotron {
   text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
 }
 .note-area {
   height: 125px;
@@ -17,10 +25,19 @@ textarea {
 .btn-save {
   width:100%;
   height:100%;
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+}
+.btn-save i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
 }
 .save-area {
   padding: 0 !important;
 }
 #current-date {
-  font-size: 48px;
+  font-size: 36px;
 }
