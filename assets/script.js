@@ -57,5 +57,7 @@ $(document).ready(function () {
   function save() {
     let uniqueID = $(this).attr("data");
     console.log(uniqueID);
-  };
+    let uniqueNote = note1.val();
+    localStorage.setItem(uniqueID , uniqueNote);
+    };
 });
