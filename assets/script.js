@@ -12,11 +12,12 @@ $(document).ready(function () {
   let note8 = $("#note8");
   let note9 = $("#note9");
   let notes = [note1, note2, note3, note4, note5, note6, note7, note8, note9];
-  let date = null;
+  
 
   // Current Date and Time
   const m = moment();
   console.log(m.toString());
+  let date = null;
 
   // All the moments to update what hour you are in for the work day
   let firstHour = moment(9, "HH");
@@ -50,14 +51,90 @@ $(document).ready(function () {
   // console.log("After:", m.isAfter(firstHour, "hour"));
   // console.log("Before:", m.isBefore(firstHour, "hour"));
   
-  $(".btn-save").on("click", save);
+  $("#btn1").on("click", save1);
+  $("#btn2").on("click", save2);
+  $("#btn3").on("click", save3);
+  $("#btn4").on("click", save4);
+  $("#btn5").on("click", save5);
+  $("#btn6").on("click", save6);
+  $("#btn7").on("click", save7);
+  $("#btn8").on("click", save8);
+  $("#btn9").on("click", save9);
 
-  const arrayId = [];
+  //let arrayId = [];
 
-  function save() {
+  function save1() {
     let uniqueID = $(this).attr("data");
-    console.log(uniqueID);
-    let uniqueNote = note1.val();
+    let uniqueNote = note1.val().trim();
     localStorage.setItem(uniqueID , uniqueNote);
-    };
+  };
+
+  function save2() {
+    let uniqueID = $(this).attr("data");
+    let uniqueNote = note2.val().trim();
+    localStorage.setItem(uniqueID , uniqueNote);
+  };
+
+  function save3() {
+    let uniqueID = $(this).attr("data");
+    let uniqueNote = note3.val().trim();
+    localStorage.setItem(uniqueID , uniqueNote);
+  };
+  function save4() {
+    let uniqueID = $(this).attr("data");
+    let uniqueNote = note4.val().trim();
+    localStorage.setItem(uniqueID , uniqueNote);
+  };
+  function save5() {
+    let uniqueID = $(this).attr("data");
+    let uniqueNote = note5.val().trim();
+    localStorage.setItem(uniqueID , uniqueNote);
+  };
+  function save6() {
+    let uniqueID = $(this).attr("data");
+    let uniqueNote = note6.val().trim();
+    localStorage.setItem(uniqueID , uniqueNote);
+  };
+  function save7() {
+    let uniqueID = $(this).attr("data");
+    let uniqueNote = note7.val().trim();
+    localStorage.setItem(uniqueID , uniqueNote);
+  };
+  function save8() {
+    let uniqueID = $(this).attr("data");
+    let uniqueNote = note8.val().trim();
+    localStorage.setItem(uniqueID , uniqueNote);
+  };
+  function save9() {
+    let uniqueID = $(this).attr("data");
+    let uniqueNote = note9.val().trim();
+    localStorage.setItem(uniqueID , uniqueNote);
+  };
+
+  let localNote1 = localStorage.getItem("save1");
+  note1.html(localNote1);
+
+  let localNote2 = localStorage.getItem("save2");
+  note2.html(localNote2);
+  
+  let localNote3 = localStorage.getItem("save3");
+  note3.html(localNote3);
+  
+  let localNote4 = localStorage.getItem("save4");
+  note4.html(localNote4);
+  
+  let localNote5 = localStorage.getItem("save5");
+  note5.html(localNote5);
+  
+  let localNote6 = localStorage.getItem("save6");
+  note6.html(localNote6);
+  
+  let localNote7 = localStorage.getItem("save7");
+  note7.html(localNote7);
+  
+  let localNote8 = localStorage.getItem("save8");
+  note8.html(localNote8);
+  
+  let localNote9 = localStorage.getItem("save9");
+  note9.html(localNote9);
 });
