@@ -50,66 +50,15 @@ $(document).ready(function () {
   // console.log("Same:", m.isSame(firstHour, "hour"));
   // console.log("After:", m.isAfter(firstHour, "hour"));
   // console.log("Before:", m.isBefore(firstHour, "hour"));
-  
-  $("#btn1").on("click", save1);
-  $("#btn2").on("click", save2);
-  $("#btn3").on("click", save3);
-  $("#btn4").on("click", save4);
-  $("#btn5").on("click", save5);
-  $("#btn6").on("click", save6);
-  $("#btn7").on("click", save7);
-  $("#btn8").on("click", save8);
-  $("#btn9").on("click", save9);
 
-  //let arrayId = [];
 
-  function save1() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note1.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
+  $(".btn-save").on("click", saveNote);
 
-  function save2() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note2.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
-
-  function save3() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note3.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
-  function save4() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note4.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
-  function save5() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note5.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
-  function save6() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note6.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
-  function save7() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note7.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
-  function save8() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note8.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
-  function save9() {
-    let uniqueID = $(this).attr("data");
-    let uniqueNote = note9.val().trim();
-    localStorage.setItem(uniqueID , uniqueNote);
-  };
+  function saveNote(){
+    let uniqueId = $(this).attr("data");
+    let uniqueNote = $(`#note${uniqueId}`).val().trim();
+    localStorage.setItem(`save${uniqueId}`, uniqueNote);
+  }
 
   let localNote1 = localStorage.getItem("save1");
   note1.html(localNote1);
