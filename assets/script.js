@@ -11,8 +11,7 @@ $(document).ready(function () {
   let note7 = $("#note7");
   let note8 = $("#note8");
   let note9 = $("#note9");
-  let notes = [note1, note2, note3, note4, note5, note6, note7, note8, note9];
-  
+  let noteArray = [note1, note2, note3, note4, note5, note6, note7, note8, note9]
 
   // Current Date and Time
   const m = moment();
@@ -38,13 +37,13 @@ $(document).ready(function () {
 
   for (let i = 0; i < hours.length; i++) {
     if (m.isBefore(hours[i], "hour") === true) {
-      notes[i].css("background", "#77dd77");
+      noteArray[i].css("background", "#77dd77");
     }
     else if (m.isAfter(hours[i], "hour") === true) {
-      notes[i].css("background", "#d3d3d3");
+      noteArray[i].css("background", "#d3d3d3");
     }
     else if (m.isSame(hours[i], "hour") === true) {
-      notes[i].css("background", "#ff6961");
+      noteArray[i].css("background", "#ff6961");
     }
   };
   // console.log("Same:", m.isSame(firstHour, "hour"));
@@ -60,30 +59,9 @@ $(document).ready(function () {
     localStorage.setItem(`save${uniqueId}`, uniqueNote);
   }
 
-  let localNote1 = localStorage.getItem("save1");
-  note1.html(localNote1);
-
-  let localNote2 = localStorage.getItem("save2");
-  note2.html(localNote2);
-  
-  let localNote3 = localStorage.getItem("save3");
-  note3.html(localNote3);
-  
-  let localNote4 = localStorage.getItem("save4");
-  note4.html(localNote4);
-  
-  let localNote5 = localStorage.getItem("save5");
-  note5.html(localNote5);
-  
-  let localNote6 = localStorage.getItem("save6");
-  note6.html(localNote6);
-  
-  let localNote7 = localStorage.getItem("save7");
-  note7.html(localNote7);
-  
-  let localNote8 = localStorage.getItem("save8");
-  note8.html(localNote8);
-  
-  let localNote9 = localStorage.getItem("save9");
-  note9.html(localNote9);
+  for (let j = 0; j < noteArray.length; j++) {
+    let noteId = noteArray[j].attr("data");
+    let saveNote = localStorage.getItem(`save${noteId}`);
+    noteArray[j].html(saveNote);
+  }
 });
