@@ -3,6 +3,9 @@ A daily calendar made with jQuery and moment.js.
 
 By adding a note to the textarea and then clicking the dave button next to that time block it will save the text to local storage. Then, when you refresh the page the note you have saved will be put into the textarea. 
 
+Here is the link to the deployed app:
+[spencer-alan.github.io/daily-calendar/](https://spencer-alan.github.io/daily-calendar/)
+
 ## Screen Shots
 
 Top of the page with the date displayed:
